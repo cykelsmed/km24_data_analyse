@@ -22,6 +22,12 @@ Notér brud på standarder i tabelformat:
 
 ### 3. Rensnings-dom (VIGTIG - BRUG PRÆCIS DENNE STRUKTUR)
 
+**Vigtig distinktion:**
+- **KILDEDATA-PROBLEMER**: Faktiske fejl i CSV/Excel som kan fixes med kode (encoding, datatypekonvertering, beregninger)
+- **EKSPORT-PROBLEMER**: Trunkerede kolonner, display-fejl fra kildesystem (kræver geneksport fra original database)
+
+Når du nævner trunkerede kolonnenavne, angiv ALTID at dette er et EKSPORT-PROBLEM der kræver geneksport fra kilden.
+
 Giv en prioriteret opgaveliste opdelt i TRE kategorier:
 
 #### ⚠️ KRITISK (Må fixes før brug)
@@ -71,12 +77,19 @@ Brug tabelformat:
 |-----------|--------|-------------------|
 | DAWA | ... | ... |
 
-### 3. Ideer til vinkler
-Giv 3 konkrete historie-forslag med:
-- **Overskrift-forslag** (konkret og faktuel - undgå superlativ og clickbait)
-- **Vinkel** (Hvad er historien?)
-- **Metode** (Hvordan undersøges det konkret?)
-- **Datamæssigt grundlag** (Er der nok data til at bære historien?)
+### 3. Research-potentiale og videre analyse
+Dette er en første afdækning - ikke færdige historier. Vurder potentialet for videre research:
+
+**A. Hvad kunne materialet potentielt bruges til?**
+- Hvilke spørgsmål kunne dette datasæt besvare?
+- Hvilke mønstre eller tendenser ser lovende ud at undersøge?
+
+**B. Hvor er det særligt relevant at researche videre?**
+Identificer 2-3 konkrete analyse-områder med:
+- **Område** (fx geografisk ulighed, tidsmønstre, outliers)
+- **Hypotese** (Hvad kunne vi forvente at finde?)
+- **Næste skridt** (Hvilken analyse skal køres? Hvilke data mangler?)
+- **Datamæssigt grundlag** (Er der tilstrækkeligt data til at undersøge dette?)
 
 ---
 
