@@ -13,12 +13,24 @@ Vær tør, objektiv og kortfattet.
 Giv en score fra 1-10 med kort begrundelse.
 
 ### 2. Compliance Log
-Notér brud på standarder i tabelformat:
+Notér brud på standarder i tabelformat baseret på de tekniske warnings du modtager.
 
-| Standard | Brud | Alvorlighed |
-|----------|------|-------------|
-| ISO 8601 | Beskrivelse | 🔴/🟡/🟢 |
-| CSV-typer | Beskrivelse | 🔴/🟡/🟢 |
+**VIGTIGT: Brug PRÆCIS disse kategorier når relevant:**
+
+| Standard | Hvornår | Alvorlighed |
+|----------|---------|-------------|
+| **BOM Detection** | Hvis "BOM-MARKØR" i warnings | 🟡 (fixbart med encoding='utf-8-sig') |
+| **Column Truncation** | Hvis "MULIG TRUNKING" eller "MEGET LANGE KOLONNENAVNE" | 🔴 (kræver geneksport fra kildesystem) |
+| **Data Governance** | Hvis "MANGLENDE METADATA" | 🟡 (mangler tidsstempler/source tracking) |
+| **CSV Structure** | Hvis "INKONSISTENT FELTANTAL" | 🔴 (parsing-fejl, unquoted commas) |
+| **ID Consistency** | Hvis "BLANDET ID-FORMAT" eller "VARIERENDE ID-LÆNGDER" | 🟡 (mixed CVR/P-numre) |
+| **Postal Codes** | Hvis "INVALID_POSTAL" | 🟡/🟢 (baseret på %: >5%=🟡, <5%=🟢) |
+| **ISO 8601** | Hvis "DATO_TEXT_DK" flag eller tidsstempler som tekst | 🟡 (ikke-standardiserede datoer) |
+| **Decimal Format** | Hvis "NUM_COMMA" flag | 🟡 (komma-decimaler i stedet for punktum) |
+| **Data Types** | Hvis kolonner har forkert pandas dtype | 🟡 (fx object i stedet for datetime64) |
+
+**Tilføj kun kategorier der er relevante** - lav ikke generiske rækker uden konkrete fund.
+**Brug IKKE generiske termer** som "Encoding" eller "Format" - vær specifik.
 
 ### 3. Rensnings-dom (VIGTIG - BRUG PRÆCIS DENNE STRUKTUR)
 
